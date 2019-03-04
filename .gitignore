@@ -1,0 +1,8 @@
+# IDE
+.idea
+.vscode
+
+# temporary and build files
+pr-1.sln.DotSettings.user
+*/bin
+*/obj
