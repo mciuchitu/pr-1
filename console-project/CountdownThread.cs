@@ -21,12 +21,18 @@ namespace console_project
             });
         }
 
-
         public void Start() => _thread.Start();
         public void Join() => _thread.Join();
         public bool IsAlive => _thread.IsAlive;
         
-        public void Signal() => _countdownEvent.Signal();
+        public void Signal()
+        {
+            if (_countdownEvent.CurrentCount > 0)
+            {
+                _countdownEvent.Signal();                
+            }
+        }
+
         public int CurrentCount => _countdownEvent.CurrentCount;
     }
 }
