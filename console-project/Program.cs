@@ -7,19 +7,19 @@ namespace console_project
     {
         private static void Main()
         {
-            var sixth = new BaseThread(() =>
+            var sixth = new CountdownThread(() =>
             {
                 Console.WriteLine("6!");
             });
             sixth.Start();
             
-            var fifth = new BaseThread(() =>
+            var fifth = new CountdownThread(() =>
             {
                 Console.WriteLine("5!");
             });
             fifth.Start();
 
-            var second = new BaseThread(() =>
+            var second = new CountdownThread(() =>
             {
                 Console.WriteLine("2!");
                 Thread.Sleep(1000);
@@ -28,7 +28,7 @@ namespace console_project
             }, 2);
             second.Start();
 
-            var third = new BaseThread(() =>
+            var third = new CountdownThread(() =>
             {
                 Console.WriteLine("3!");
                 Thread.Sleep(1000);
